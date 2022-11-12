@@ -20,16 +20,45 @@ module.exports = {
           loader: "babel-loader"
         }
       },
+      // {
+      //   test: /\.(scss|sass|css)$/,
+      //   use: [
+      //     // Creates `style` nodes from JS strings
+      //     "style-loader",
+      //     // Translates CSS into CommonJS
+      //     "css-loader",
+      //     // Compiles Sass to CSS
+      //     "sass-loader",
+      //   ],
+      // },
       {
+
         test: /\.(scss|sass|css)$/,
+
         use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
+
+          'style-loader',
+
+          {
+
+            loader: 'css-loader',
+
+            options: {
+
+              url: false
+
+            }
+
+          },
+
+          {
+
+            loader: 'sass-loader',
+
+          }
+
+        ]
+
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

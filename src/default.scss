@@ -1,3 +1,21 @@
-h1{
-    font-family: sans-serif;
+@import 'variable';
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.phone{
+    display: flex;
+    height: 100%;
+    width: 550px;
+    border: solid 1px black;
 }
