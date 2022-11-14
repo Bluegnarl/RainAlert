@@ -1,5 +1,7 @@
 @import 'variable';
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *, ::before, ::after{
     margin: 0;
     padding: 0;
@@ -17,5 +19,49 @@ body{
     display: flex;
     height: 100%;
     width: 550px;
-    border: solid 1px black;
+    border: solid outset 1px black;
 }
+
+.loading-screen{
+    display: flex;
+    width: 550px;
+    height: 100%;
+    background-image: url(./assets/images/sky.jpg);
+    background-size: cover;
+}
+
+.loading-component{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    & .logo{
+        display: flex;
+        width: 125px;
+        height: 125px;
+        background-image: url(./assets/images/logo.png);
+        background-size: cover;
+    }
+    & .loading-text{
+        display: flex;
+        flex-direction: column;
+        font-family: 'Inter', sans-serif;
+        text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+        margin-left: 10px;
+        &-1{
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: $blanc;
+        }
+        &-2{
+            font-size: 1.5rem;
+            font-weight: 200;
+            color: $blanc;
+        }
+    }
+}
+
+
+
