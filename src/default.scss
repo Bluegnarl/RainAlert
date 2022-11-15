@@ -18,10 +18,11 @@ body{
 
 .phone{
     display: flex;
-    height: 100%;
-    width: 550px;
-    border: solid outset 1px black;
+    position: relative;
     overflow: hidden;
+    height: 100%;
+    width: 500px;
+    border: solid outset 1px black;
 }
 
 #app{
@@ -37,7 +38,7 @@ body{
     position: absolute;
     margin-left: 0;
     display: flex;
-    width: 550px;
+    width: 500px;
     height: 100%;
     background-image: url(./assets/images/sky.jpg);
     background-size: cover;
@@ -91,31 +92,63 @@ body{
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 12%;
+        height: 14%;
         align-items: center;
         justify-content: center;
-        background-color: $bleu-fonce;
+        background: $bleu-fonce;
         & .logo-home{
-            width: 85px;
-            height: 85px;
+            width: 90px;
+            height: 90px;
             background-image: url(./assets/images/logo-mini.png);
             background-size: cover;
-            margin-right: 5px;
+            margin-right: 7px;
         }
         & .titre-home{
             display: flex;
             font-family: 'Inter', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 600;
             color: $blanc;
             text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
-            margin-left: 5px;
+            margin-left: 7px;
         }
     }
     & .body-home{
+        display: flex;
+        justify-content: center;
+
         width: 100%;
-        height: 76%;
-        background-color: $bleu-clair;
+        height: 74%;
+        background: $degrade-bleu;
+        & .search-bar{
+            margin: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 77%;
+            height: 70px;
+            background: $bleu-giga-clair;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+            & .plane-search-bar{
+                width: 45px;
+                height: 45px;
+                background-size: cover;
+                background-image: url(./assets/images/plane.png);
+            }
+            & .text-search-bar{
+                font-family: 'Inter', sans-serif;
+                font-size: 1.7rem;
+                font-weight: 600;
+                color: $blanc;
+            }
+            & .logo-search-bar{
+                width: 45px;
+                height: 45px;
+                background-size: cover;
+                background-image: url(./assets/images/search.png);
+            }
+        }
     }
     & footer{
         width: 100%;

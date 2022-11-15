@@ -14,5 +14,5 @@ const loadingScreen = document.querySelector('.loading-screen');
 let waitingLoading = window.setTimeout(animation, 1500);
 
 function animation(){
-    loadingScreen.style.marginLeft = '-550px';
+    loadingScreen.style.marginLeft = '-500px';
 }
