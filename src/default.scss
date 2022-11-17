@@ -44,6 +44,7 @@ body{
     background-size: cover;
     margin-left: 0;
     transition: all 1s;
+    z-index: 1000;
     & .loading-component{
         display: flex;
         width: 100%;
@@ -86,20 +87,19 @@ body{
     height: 100%;
     margin-left: 0;
     transition: all 1s;
-    background: $bleu-clair;
+    background: $degrade-bleu;
     flex-direction: column;
     & header{
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 14%;
+        height: 12%;
         align-items: center;
         justify-content: center;
-        background: $bleu-fonce;
         & .logo-home{
             width: 90px;
             height: 90px;
-            background-image: url(./assets/images/logo-mini.png);
+            background-image: url(./assets/images/logo.png);
             background-size: cover;
             margin-right: 7px;
         }
@@ -116,37 +116,33 @@ body{
     & .body-home{
         display: flex;
         justify-content: center;
-
         width: 100%;
-        height: 74%;
-        background: $degrade-bleu;
+        height: 76%;
         & .search-bar{
-            margin: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 77%;
-            height: 70px;
+            width: 80%;
+            height: 65px;
+            margin: 15px;
             background: $bleu-giga-clair;
             border-radius: 10px;
             box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
-            & .plane-search-bar{
-                width: 45px;
-                height: 45px;
-                background-size: cover;
-                background-image: url(./assets/images/plane.png);
-            }
-            & .text-search-bar{
-                font-family: 'Inter', sans-serif;
-                font-size: 1.7rem;
-                font-weight: 600;
+            border: none;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: $blanc;
+            padding: 0 65px 0 17px;
+            background-image: url(./assets/images/search.png);
+            background-repeat: no-repeat;
+            background-size: 45px;
+            background-position: 343px 11px;
+            &::placeholder{
+                z-index: -0.5;
                 color: $blanc;
-            }
-            & .logo-search-bar{
-                width: 45px;
-                height: 45px;
-                background-size: cover;
-                background-image: url(./assets/images/search.png);
+                opacity: 0.5;
             }
         }
     }
