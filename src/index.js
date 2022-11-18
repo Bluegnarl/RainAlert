@@ -18,3 +18,22 @@ let waitingLoading = window.setTimeout(animation, 1500);
 function animation(){
     loadingScreen.style.marginLeft = '-500px';
 }
+
+const homeFooterTitle = document.querySelector('.home-footer-title');
+const homeFooterButton = document.querySelector('.home-footer-button');
+const mapFooterButton = document.querySelector('.map-footer-button');
+
+const bodyHome = document.querySelector('.main');
+const boutonMap = document.querySelector('.map-footer-button');
+boutonMap.addEventListener('click', () => {
+    bodyHome.style.marginLeft = '-100%';
+    mapFooterButton.style.opacity = '1';
+    homeFooterButton.style.opacity = '0.5';
+})
+
+const boutonHome = document.querySelector('.home-footer-button');
+boutonHome.addEventListener('click', () => {
+    bodyHome.style.marginLeft = '0%';
+    mapFooterButton.style.opacity = '0.5';
+    homeFooterButton.style.opacity = '1';
+})
