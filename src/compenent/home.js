@@ -7,8 +7,8 @@ const Home = () => {
                 <div class="search">
                     <div class="results"></div>
                     <div class="buttons">
-                        <div class="annuler"></div>
-                        <div class="rechercher"></div>
+                        <div class="annuler">Annuler</div>
+                        <div class="rechercher">Rechercher</div>
                     </div>
                 </div>
             </div>

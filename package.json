@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.18.6",
     "@fontsource/metropolis": "^4.5.3",
     "babel-loader": "^8.2.5",
+    "chart.js": "^4.0.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
