@@ -37,3 +37,11 @@ boutonHome.addEventListener('click', () => {
     mapFooterButton.style.opacity = '0.5';
     homeFooterButton.style.opacity = '1';
 })
+
+const searchBar = document.querySelector('.search-bar');
+const search = document.querySelector('.search');
+searchBar.addEventListener('click', () => {
+    searchBar.style.backgroundColor = '#FFFFFF';
+    searchBar.style.color = '#292929';
+    search.style.height = '80%';
+})
