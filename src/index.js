@@ -3,6 +3,7 @@ import Loading from "./compenent/loading";
 import Home from "./compenent/home";
 import Header from "./compenent/header";
 import Footer from "./compenent/footer";
+import { Chart } from "chart.js/auto";
 
 const app = document.getElementById('app');
 
@@ -80,17 +81,11 @@ function nameBuild(json){
     })
 }
 searchBar.addEventListener('click', () => {
-    searchBar.style.backgroundColor = '#FFFFFF';
-    searchBar.style.color = '#2A7FFF';
-    searchBar.style.backgroundImage = 'url(./assets/images/search-blue.png)';
-    search.style.height = '80%';
+    search.style.height = '50%';
     annuler.style.display = 'flex';
     rechercher.style.display = 'flex';
 })
 annuler.addEventListener('click', () => {
-    searchBar.style.backgroundColor = '#A4C8FF';
-    searchBar.style.color = '#FFFFFF';
-    searchBar.style.backgroundImage = 'url(./assets/images/search.png)';
     search.style.height = '0%';
     annuler.style.display = 'none';
     rechercher.style.display = 'none';
@@ -108,3 +103,62 @@ rechercher.addEventListener('click', () => {
         results.style.overflowY = 'scroll';
     }
 })
+
+let graph;
+
+function lachartdetesmorts(){
+    graph = new Chart(
+        document.getElementById('myChart'),
+        {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00'],
+            datasets: [{
+                label: 'Précipitations en mm',
+                data: [1, 0, 0.7, 1.4, 1.3],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        color: '#D7D7D7',
+                    },
+                    ticks: {
+                        color: '#2A7FFF',
+                    }
+                },
+                y: {
+                    max: 1.5,
+                    grid: {
+                        display: false,
+                    },
+                    beginAtZero: true,
+                    ticks: {
+                        display: false,
+                    }
+                }
+            },
+            elements: {
+                line: {
+                    tension: 0.4,
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+                datalabels: {
+                    display: false,
+                },
+            },
+
+            maintainAspectRatio: false,
+        }
+    });
+}
+
+lachartdetesmorts();

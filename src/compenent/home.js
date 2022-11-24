@@ -11,6 +11,11 @@ const Home = () => {
                         <div class="rechercher">Rechercher</div>
                     </div>
                 </div>
+                <div class="graph">
+                    <div class="chart">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
             </div>
             <div class="map-home"></div>
         </div>
