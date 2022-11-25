@@ -115,10 +115,9 @@ function lachartdetesmorts(){
             labels: ['12:00', '13:00', '14:00', '15:00', '16:00'],
             datasets: [{
                 label: 'Précipitations en mm',
-                data: [1, 0, 0.7, 1.4, 1.3],
+                data: [1, 0.5, 0.7, 1.4, 1.3],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
+                borderColor: '#2A7FFF',
             }]
         },
         options: {
@@ -140,12 +139,12 @@ function lachartdetesmorts(){
                     ticks: {
                         display: false,
                     }
-                }
+                },
             },
             elements: {
                 line: {
                     tension: 0.4,
-                }
+                },
             },
             plugins: {
                 legend: {
@@ -155,10 +154,9 @@ function lachartdetesmorts(){
                     display: false,
                 },
             },
-
             maintainAspectRatio: false,
         }
-    });
+    })
 }
 
 lachartdetesmorts();

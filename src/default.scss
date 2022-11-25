@@ -232,18 +232,142 @@ body{
             }
             & .graph{
                 display: flex;
+                flex-direction: column;
                 width: 80%;
                 height: 55%;
                 border-radius: 10px;
                 background-color: $blanc;
                 margin-top: 150px;
-                align-items: center;
-                justify-content: center;
-                & .chart{
+                & .chart-top{
                     display: flex;
-                    width: 80%;
-                    height: 80%;
-                    position: relative;
+                    width: 100%;
+                    height: 14%;
+                    & .chart-precip{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 50%;
+                        height: 100%;
+                        font-family: 'Inter', sans-serif;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        color: $bleu-clair;
+                    }
+                    & .chart-top-right{
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        width: 50%;
+                        height: 100%;
+                        margin-right: 10px;
+                        & .chart-fiabilite{
+                            color: $bleu-clair;
+                            font-family: 'Inter', sans-serif;
+                            font-size: 1.1rem;
+                            font-weight: 400;
+                            margin-right: 3px;
+                        }
+                        & .chart-pourcent{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 28%;
+                            height: 63%;
+                            border-radius: 10px;
+                            background-color: $bleu-clair;
+                            margin-left: 3px;
+                            & .chart-pourcent-texte{
+                                color: $blanc;
+                                font-family: 'Inter', sans-serif;
+                                font-size: 1.1rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                & .chart-bot{
+                    display: flex;
+                    width: 100%;
+                    height: 83%;
+                    & .gouttes{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 15%;
+                        height: 100%;
+                        margin-left: 20px;
+                        & .goutte-1{
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            height: 33%;
+                            justify-content: center;
+                            align-items: center;
+                            & .goutte-img-1{
+                                width: 77%;
+                                height: 50%;
+                                background-image: url(./assets/images/goutte1.png);
+                                background-repeat: no-repeat;
+                                background-size: 53px;
+                                margin-right: 5px;
+                            }
+                            & .goutte-txt-1{
+                                color: $bleu-clair;
+                                font-family: 'Inter', sans-serif;
+                                font-size: 1rem;
+                                font-weight: 500;
+                            }
+                        }
+                        & .goutte-2{
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            height: 33%;
+                            justify-content: center;
+                            align-items: center;
+                            & .goutte-img-2{
+                                width: 65%;
+                                height: 25%;
+                                background-image: url(./assets/images/goutte2.png);
+                                background-repeat: no-repeat;
+                                background-size: 38px;
+                            }
+                            & .goutte-txt-2{
+                                color: $bleu-clair;
+                                font-family: 'Inter', sans-serif;
+                                font-size: 1rem;
+                                font-weight: 500;
+                            }
+                        }
+                        & .goutte-3{
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            height: 33%;
+                            justify-content: center;
+                            align-items: center;
+                            & .goutte-img-3{
+                                width: 30%;
+                                height: 28%;
+                                background-image: url(./assets/images/goutte3.png);
+                                background-repeat: no-repeat;
+                                background-size: 17px;
+                            }
+                            & .goutte-txt-3{
+                                color: $bleu-clair;
+                                font-family: 'Inter', sans-serif;
+                                font-size: 1rem;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                    & .chart{
+                        display: flex;
+                        width: 78%;
+                        height: 100%;
+                        position: relative;
+                    }
                 }
             }
         }
