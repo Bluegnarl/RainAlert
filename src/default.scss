@@ -90,7 +90,7 @@ body{
     flex-direction: column;
     & .main{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
         height: 100%;
         margin-left: 0%;
@@ -167,7 +167,7 @@ body{
                     }
                     &::-webkit-scrollbar-thumb{
                           border-radius: 10px;
-                          background: $degrade-bleu;
+                          background: $bleu-giga-clair;
                     }
                     & .ligne{
                         height: 1px;
@@ -230,6 +230,42 @@ body{
                     }
                 }
             }
+            & .meteo{
+                display: flex;
+                flex-direction: row;
+                width: 80%;
+                height: 20%;
+                align-items: center;
+                justify-content: space-around;
+                & .logo-meteo{
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    &-1{
+                        width: 47.5%;
+                        height: 65%;
+                        background-image: url(./assets/images/sun.png);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                }
+                & .text-meteo{
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: -160px;
+                    &-1{
+                        color: $blanc;
+                        font-family: 'Inter', sans-serif;
+                        font-size: 2rem;
+                        font-weight: 700;
+                    }
+                }
+            }
             & .graph{
                 display: flex;
                 flex-direction: column;
@@ -237,7 +273,7 @@ body{
                 height: 55%;
                 border-radius: 10px;
                 background-color: $blanc;
-                margin-top: 150px;
+                margin-top: 13px;
                 & .chart-top{
                     display: flex;
                     width: 100%;
@@ -370,15 +406,70 @@ body{
                     }
                 }
             }
+            & .the-time{
+                display: flex;
+                width: 80%;
+                height: 5%;
+                border-radius: 100px;
+                align-items: center;
+                justify-content: space-around;
+                background-color: $bleu-clair;
+                margin-top: 20px;
+                & .time-1{
+                    color: $blanc;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                & .time-2{
+                    color: $blanc;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                & .time-3{
+                    color: $blanc;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                & .time-4{
+                    color: $blanc;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                & .time-5{
+                    color: $blanc;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+            }
         }
         & .map-home{
             display: flex;
             justify-content: center;
+            align-items: center;
             width: 100%;
             height: 74%;
             flex-shrink: 0;
             flex-grow: 1;
             margin-right: -50%;
+            & .google-map{
+                border-radius: 10px;
+                margin-top: 170px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                height: 120%;
+                & iframe{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
         }
     }
 }
