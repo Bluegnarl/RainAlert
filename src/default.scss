@@ -142,7 +142,6 @@ body{
                 height: 0%;
                 border-radius: 0 0 10px 10px;
                 margin-top: 25px;
-                background-color: $blanc;
                 transition: all .5s;
                 z-index: 9;
                 box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
@@ -153,7 +152,7 @@ body{
                     padding-top: 15px;
                     overflow-y: none;
                     width: 100%;
-                    height: 350px;
+                    height: 80%;
                     background-color: $bleu-giga-mega-clair;
                     margin-top: 43px;
                     &::-webkit-scrollbar{
@@ -186,7 +185,7 @@ body{
                 & .buttons{
                     display: flex;
                     width: 100%;
-                    height: 17%;
+                    height: 20%;
                     justify-content: space-around;
                     align-items: center;
                     background-color: $bleu-giga-clair;
@@ -234,7 +233,7 @@ body{
                 display: flex;
                 flex-direction: row;
                 width: 80%;
-                height: 20%;
+                height: 17%;
                 align-items: center;
                 justify-content: space-around;
                 & .logo-meteo{
@@ -244,8 +243,8 @@ body{
                     align-items: center;
                     justify-content: center;
                     &-1{
-                        width: 47.5%;
-                        height: 65%;
+                        width: 85px;
+                        height: 85px;
                         background-image: url(./assets/images/sun.png);
                         background-repeat: no-repeat;
                         background-size: cover;
@@ -341,11 +340,11 @@ body{
                             justify-content: center;
                             align-items: center;
                             & .goutte-img-1{
-                                width: 77%;
-                                height: 50%;
+                                width: 50px;
+                                height: 50px;
                                 background-image: url(./assets/images/goutte1.png);
                                 background-repeat: no-repeat;
-                                background-size: 53px;
+                                background-size: cover;
                                 margin-right: 5px;
                             }
                             & .goutte-txt-1{
@@ -363,11 +362,11 @@ body{
                             justify-content: center;
                             align-items: center;
                             & .goutte-img-2{
-                                width: 65%;
-                                height: 25%;
+                                width: 40px;
+                                height: 24px;
+                                background-size: cover;
                                 background-image: url(./assets/images/goutte2.png);
                                 background-repeat: no-repeat;
-                                background-size: 38px;
                             }
                             & .goutte-txt-2{
                                 color: $bleu-clair;
@@ -384,11 +383,11 @@ body{
                             justify-content: center;
                             align-items: center;
                             & .goutte-img-3{
-                                width: 30%;
-                                height: 28%;
+                                width: 18px;
+                                height: 27px;
+                                background-size: cover;
                                 background-image: url(./assets/images/goutte3.png);
                                 background-repeat: no-repeat;
-                                background-size: 17px;
                             }
                             & .goutte-txt-3{
                                 color: $bleu-clair;
@@ -414,36 +413,41 @@ body{
                 align-items: center;
                 justify-content: space-around;
                 background-color: $bleu-clair;
-                margin-top: 20px;
+                margin-top: 13px;
                 & .time-1{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    cursor: pointer;
                 }
                 & .time-2{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    cursor: pointer;
                 }
                 & .time-3{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    cursor: pointer;
                 }
                 & .time-4{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    cursor: pointer;
                 }
                 & .time-5{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    cursor: pointer;
                 }
             }
         }
@@ -451,24 +455,29 @@ body{
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             width: 100%;
-            height: 74%;
+            height: 100%;
             flex-shrink: 0;
             flex-grow: 1;
-            margin-right: -50%;
-            & .google-map{
-                border-radius: 10px;
-                margin-top: 170px;
+            & iframe{
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 80%;
-                height: 120%;
-                & iframe{
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 10px;
-                }
+                width: 85%;
+                height: 95%;
+                border-radius: 10px;
+            }
+            & .heure-map{
+                position: absolute;
+                display: flex;
+                background-color: $blanc;
+                border-radius: 100px;
+                padding: 7px 12px 7px 12px;
+                color: $bleu-clair;
+                font-family: 'Inter', sans-serif;
+                font-size: 1.5rem;
+                font-weight: 700;
+                top: 40px;
+                right: 12%;
             }
         }
     }
@@ -497,6 +506,11 @@ header{
         color: $blanc;
         text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
         margin-left: 7px;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 }
 
@@ -530,6 +544,11 @@ footer{
             font-size: 1.2rem;
             font-weight: 800;
             color: $bleu-clair;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     }
     & .map-footer-button{
@@ -555,6 +574,11 @@ footer{
             font-size: 1.2rem;
             font-weight: 800;
             color: $bleu-clair;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     }
 }

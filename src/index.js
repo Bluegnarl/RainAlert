@@ -81,7 +81,7 @@ function nameBuild(json){
     })
 }
 searchBar.addEventListener('click', () => {
-    search.style.height = '50%';
+    search.style.height = '45%';
     annuler.style.display = 'flex';
     rechercher.style.display = 'flex';
 })
