@@ -107,6 +107,7 @@ rechercher.addEventListener('click', () => {
 let graph;
 
 function lachartdetesmorts(){
+
     graph = new Chart(
         document.getElementById('myChart'),
         {
@@ -158,5 +159,59 @@ function lachartdetesmorts(){
         }
     })
 }
+
+const divTime = document.querySelector('.div-time');
+const time1 = document.querySelector('.time-1');
+const time2 = document.querySelector('.time-2');
+const time3 = document.querySelector('.time-3');
+const time4 = document.querySelector('.time-4');
+const time5 = document.querySelector('.time-5');
+
+time1.addEventListener('click', () => {
+    divTime.style.left = '0%';
+    time1.style.color = '#2A7FFF';
+    time2.style.color = '#FFFFFF';
+    time3.style.color = '#FFFFFF';
+    time4.style.color = '#FFFFFF';
+    time5.style.color = '#FFFFFF';
+})
+time2.addEventListener('click', () => {
+    divTime.style.left = '20%';
+    time1.style.color = '#FFFFFF';
+    time2.style.color = '#2A7FFF';
+    time3.style.color = '#FFFFFF';
+    time4.style.color = '#FFFFFF';
+    time5.style.color = '#FFFFFF';
+})
+time3.addEventListener('click', () => {
+    divTime.style.left = '40%';
+    time1.style.color = '#FFFFFF';
+    time2.style.color = '#FFFFFF';
+    time3.style.color = '#2A7FFF';
+    time4.style.color = '#FFFFFF';
+    time5.style.color = '#FFFFFF';
+})
+time4.addEventListener('click', () => {
+    divTime.style.left = '60%';
+    time1.style.color = '#FFFFFF';
+    time2.style.color = '#FFFFFF';
+    time3.style.color = '#FFFFFF';
+    time4.style.color = '#2A7FFF';
+    time5.style.color = '#FFFFFF';
+})
+time5.addEventListener('click', () => {
+    divTime.style.left = '80%';
+    time1.style.color = '#FFFFFF';
+    time2.style.color = '#FFFFFF';
+    time3.style.color = '#FFFFFF';
+    time4.style.color = '#FFFFFF';
+    time5.style.color = '#2A7FFF';
+})
+
+const heureMap = document.querySelector('.heure-map');
+let date;
+window.setInterval( () => {
+    date = new Date();
+    heureMap.textContent = `${date.getHours()}:${date.getMinutes() <= 9 ? "0" + date.getMinutes() : date.getMinutes()}`} , 1000);
 
 lachartdetesmorts();

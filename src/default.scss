@@ -411,43 +411,66 @@ body{
                 height: 5%;
                 border-radius: 100px;
                 align-items: center;
+                position: relative;
                 justify-content: space-around;
                 background-color: $bleu-clair;
                 margin-top: 13px;
+                z-index: 1;
+                & .div-time{
+                    position: absolute;
+                    display: flex;
+                    width: 20%;
+                    height: 100%;
+                    background-color: $blanc;
+                    border-radius: 100px;
+                    left: 0%;
+                    z-index: 2;
+                    transition: left 0.5s;
+                }
                 & .time-1{
-                    color: $blanc;
+                    color: $bleu-clair;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
                     cursor: pointer;
+                    z-index: 3;
+                    transition: all .5s;
                 }
                 & .time-2{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    z-index: 3;
                     cursor: pointer;
+                    transition: all .5s;
                 }
                 & .time-3{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    z-index: 3;
                     cursor: pointer;
+                    transition: all .5s;
                 }
                 & .time-4{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    z-index: 3;
                     cursor: pointer;
+                    transition: all .5s;
                 }
                 & .time-5{
                     color: $blanc;
                     font-family: 'Inter', sans-serif;
                     font-size: 1rem;
                     font-weight: 600;
+                    z-index: 3;
                     cursor: pointer;
+                    transition: all .5s;
                 }
             }
         }
