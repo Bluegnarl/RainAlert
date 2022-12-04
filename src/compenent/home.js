@@ -25,7 +25,7 @@ const Home = () => {
                         <div class="chart-top-right">
                             <div class="chart-fiabilite">Fiabilité</div>
                             <div class="chart-pourcent">
-                                <div class="chart-pourcent-texte">20%</div>
+                                <div class="chart-pourcent-texte"></div>
                             </div>
                         </div>
                     </div>
