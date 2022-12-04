@@ -4,7 +4,7 @@ import { Chart } from "chart.js/auto";
 
 const app = document.getElementById('app');
 
-// Import HTML
+// Import HTML //
 import Loading from "./compenent/loading";
 import Home from "./compenent/home";
 import Header from "./compenent/header";
