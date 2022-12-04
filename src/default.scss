@@ -245,7 +245,6 @@ body{
                     &-1{
                         width: 85px;
                         height: 85px;
-                        background-image: url(./assets/images/sun.png);
                         background-repeat: no-repeat;
                         background-size: cover;
                     }
@@ -256,7 +255,7 @@ body{
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-left: -160px;
+                    margin-left: -35%;
                     &-1{
                         color: $blanc;
                         font-family: 'Inter', sans-serif;
@@ -436,7 +435,7 @@ body{
                     font-weight: 600;
                     cursor: pointer;
                     z-index: 3;
-                    transition: all 1s;
+                    transition: all .5s;
                 }
                 & .time-2{
                     color: $blanc;
@@ -445,7 +444,7 @@ body{
                     font-weight: 600;
                     z-index: 3;
                     cursor: pointer;
-                    transition: all 1s;
+                    transition: all .5s;
                 }
                 & .time-3{
                     color: $blanc;
@@ -454,7 +453,7 @@ body{
                     font-weight: 600;
                     z-index: 3;
                     cursor: pointer;
-                    transition: all 1s;
+                    transition: all .5s;
                 }
                 & .time-4{
                     color: $blanc;
@@ -463,7 +462,7 @@ body{
                     font-weight: 600;
                     z-index: 3;
                     cursor: pointer;
-                    transition: all 1s;
+                    transition: all .5s;
                 }
                 & .time-5{
                     color: $blanc;
@@ -472,7 +471,7 @@ body{
                     font-weight: 600;
                     z-index: 3;
                     cursor: pointer;
-                    transition: all 1s;
+                    transition: all .5s;
                 }
             }
         }

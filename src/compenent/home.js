@@ -16,7 +16,7 @@ const Home = () => {
                         <div class="logo-meteo-1"></div>
                     </div>
                     <div class="text-meteo">
-                        <div class="text-meteo-1">12°C</div>
+                        <div class="text-meteo-1">?°C</div>
                     </div>
                 </div>
                 <div class="graph">
@@ -25,7 +25,7 @@ const Home = () => {
                         <div class="chart-top-right">
                             <div class="chart-fiabilite">Fiabilité</div>
                             <div class="chart-pourcent">
-                                <div class="chart-pourcent-texte"></div>
+                                <div class="chart-pourcent-texte">?%</div>
                             </div>
                         </div>
                     </div>

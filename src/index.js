@@ -4,7 +4,7 @@ import { Chart } from "chart.js/auto";
 
 const app = document.getElementById('app');
 
-// Import HTML //
+// Inner HTML //
 import Loading from "./compenent/loading";
 import Home from "./compenent/home";
 import Header from "./compenent/header";
@@ -24,7 +24,7 @@ function animation(){
     loadingScreen.style.marginLeft = '-500px';
 }
 
-// Boutons Footer
+// Boutons Footer pour changer de pages
 const homeFooterTitle = document.querySelector('.home-footer-title');
 const homeFooterButton = document.querySelector('.home-footer-button');
 const mapFooterButton = document.querySelector('.map-footer-button');
@@ -42,7 +42,7 @@ boutonHome.addEventListener('click', () => {
     homeFooterButton.style.opacity = '1';
 })
 
-// API //
+// Géolocalisation //
 const localisation = require('geolocation');
 const deuxVergesPosition = [
     44.8,
@@ -56,8 +56,10 @@ localisation.getCurrentPosition((err, position) => {
   .then(json => firstChart(json))
 })
 
-const token = '2bb58aceddb0cb94943a7226864991914f2a61f093db1a90e68f5c6533770fe0';
+// Le TOKEN (alierdemkocak68@gmail.com)
+const token = '08c538807b5a374037d96d7f149dcae6eccae036710b2e51a67fb2df4d24a2d2';
 
+// Everything about the Search Bar
 const searchBar = document.querySelector('.search-bar');
 const search = document.querySelector('.search');
 const annuler = document.querySelector('.annuler');
@@ -97,12 +99,48 @@ function nameBuild(json){
     })
 }
 
+// ClickCity (quand je clique sur l'une des villes de la searchBar)
 function clickCity(json){
     const pourcentage = json.forecast[0].probarain += "%";
     chartBuild( json.forecast[0].datetime.slice(11,16), json.forecast[0].rr10, json.forecast[1].datetime.slice(11,16), json.forecast[1].rr10, json.forecast[2].datetime.slice(11,16), json.forecast[2].rr10, json.forecast[3].datetime.slice(11,16), json.forecast[3].rr10, json.forecast[4].datetime.slice(11,16), json.forecast[4].rr10)
     pourcent.innerHTML = pourcentage;
+    isFirstOrNot = false;
+    divTime.style.left = '0%';
+    time1.style.color = '#2A7FFF';
+    time2.style.color = '#FFFFFF';
+    time3.style.color = '#FFFFFF';
+    time4.style.color = '#FFFFFF';
+    time5.style.color = '#FFFFFF';
+    hoursGeneration(json);
+    textGeneration(0);
+    meteo(json);
 }
 
+// TextGeneration (génération des textes °C)
+const degreeText = document.querySelector('.text-meteo-1');
+
+let isFirstOrNot = true;
+
+function textGeneration(textNbr){
+    let whichText = textNbr;
+    if ( isFirstOrNot ) {
+        fetch(`https://api.meteo-concept.com/api/forecast/nextHours?token=${token}&latlng=${deuxVergesPosition[0]}%2C${deuxVergesPosition[1]}&hourly=true`)
+        .then(res => res.json())
+        .then(json => textGenerationReal(json, whichText))
+    }
+    else {
+        fetch(`https://api.meteo-concept.com/api/forecast/nextHours?token=${token}&latlng=${lat}%2C${long}&insee=${insee}&hourly=true`)
+        .then(res => res.json())
+        .then(json => textGenerationReal(json, whichText))
+    }
+}
+
+function textGenerationReal(json, whichText){
+    const heure = json.forecast[whichText].datetime.slice(11,16);
+    degreeText.textContent= json.forecast[whichText].temp2m + "°C";
+}
+
+// Création objets de latitude et de longitude
 let lat;
 let long;
 let insee;
@@ -182,7 +220,7 @@ function chartBuild( h1, t1, h2, t2, h3, t3, h4, t4, h5, t5 ){
 }
 chartBuild();
 
-// Search Bar Click Effects
+// Search Bar Click Action
 searchBar.addEventListener('click', () => {
     search.style.height = '45%';
     annuler.style.display = 'flex';
@@ -207,7 +245,7 @@ rechercher.addEventListener('click', () => {
     }
 })
 
-// Time 1, 2, 3, 4, 5
+// Time 1, 2, 3, 4, 5 (les 5 heures)
 const divTime = document.querySelector('.div-time');
 const time1 = document.querySelector('.time-1');
 const time2 = document.querySelector('.time-2');
@@ -222,6 +260,7 @@ time1.addEventListener('click', () => {
     time3.style.color = '#FFFFFF';
     time4.style.color = '#FFFFFF';
     time5.style.color = '#FFFFFF';
+    textGeneration(0);
 })
 time2.addEventListener('click', () => {
     divTime.style.left = '20%';
@@ -230,6 +269,7 @@ time2.addEventListener('click', () => {
     time3.style.color = '#FFFFFF';
     time4.style.color = '#FFFFFF';
     time5.style.color = '#FFFFFF';
+    textGeneration(1);
 })
 time3.addEventListener('click', () => {
     divTime.style.left = '40%';
@@ -238,6 +278,7 @@ time3.addEventListener('click', () => {
     time3.style.color = '#2A7FFF';
     time4.style.color = '#FFFFFF';
     time5.style.color = '#FFFFFF';
+    textGeneration(2);
 })
 time4.addEventListener('click', () => {
     divTime.style.left = '60%';
@@ -246,6 +287,7 @@ time4.addEventListener('click', () => {
     time3.style.color = '#FFFFFF';
     time4.style.color = '#2A7FFF';
     time5.style.color = '#FFFFFF';
+    textGeneration(3);
 })
 time5.addEventListener('click', () => {
     divTime.style.left = '80%';
@@ -254,9 +296,19 @@ time5.addEventListener('click', () => {
     time3.style.color = '#FFFFFF';
     time4.style.color = '#FFFFFF';
     time5.style.color = '#2A7FFF';
+    textGeneration(4);
 })
 
-// Heure Map
+// Génération des 5 Heures
+function hoursGeneration(json){
+    time1.textContent= json.forecast[0].datetime.slice(11,16);
+    time2.textContent= json.forecast[1].datetime.slice(11,16);
+    time3.textContent= json.forecast[2].datetime.slice(11,16);
+    time4.textContent= json.forecast[3].datetime.slice(11,16);
+    time5.textContent= json.forecast[4].datetime.slice(11,16);
+}
+
+// Heure sur la Map
 const heureMap = document.querySelector('.heure-map');
 let date;
 window.setInterval( () => {
@@ -264,10 +316,33 @@ window.setInterval( () => {
     heureMap.textContent = `${date.getHours()}:${date.getMinutes() <= 9 ? "0" + date.getMinutes() : date.getMinutes()}`
 } , 1000);
 
+// First Chart
 function firstChart(json){
     chartBuild( json.forecast[0].datetime.slice(11,16), json.forecast[0].rr10, json.forecast[1].datetime.slice(11,16), json.forecast[1].rr10, json.forecast[2].datetime.slice(11,16), json.forecast[2].rr10, json.forecast[3].datetime.slice(11,16), json.forecast[3].rr10, json.forecast[4].datetime.slice(11,16), json.forecast[4].rr10, json.forecast[0].probarain, json.forecast[1].probarain, json.forecast[2].probarain, json.forecast[3].probarain, json.forecast[4].probarain );
     searchBar.placeholder = json.city.name;
     console.log(json);
     const pourcentage = json.forecast[0].probarain += "%";
     pourcent.innerHTML = pourcentage;
+    meteo(json);
+    hoursGeneration(json);
+    textGeneration(0);
+}
+
+// Logo Meteo par rapport à la probabilité de précipitements
+const logoMeteo = document.querySelector('.logo-meteo-1');
+
+function meteo(json){
+    let pluie = json.forecast[0].probarain;
+    if(pluie < "30%"){
+        logoMeteo.style.backgroundImage= "none";
+        logoMeteo.style.backgroundImage = "url(./assets/images/sun.png)";
+    }
+    else if(pluie >= "70%"){
+        logoMeteo.style.backgroundImage= "none";
+        logoMeteo.style.backgroundImage = "url(./assets/images/rainy.png)";
+    }
+    else if(pluie >= "30%"){
+        logoMeteo.style.backgroundImage= "none";
+        logoMeteo.style.backgroundImage = "url(./assets/images/cloudy.png)";
+    }
 }
