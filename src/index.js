@@ -59,6 +59,17 @@ localisation.getCurrentPosition((err, position) => {
 // Le TOKEN (alierdemkocak68@gmail.com)
 const token = '08c538807b5a374037d96d7f149dcae6eccae036710b2e51a67fb2df4d24a2d2';
 
+// Création objets de latitude et de longitude
+let lat;
+let long;
+let insee;
+
+function getPosition(item){
+    lat = item.latitude;
+    long = item.longitude;
+    insee = item.insee;
+}
+
 // Everything about the Search Bar
 const searchBar = document.querySelector('.search-bar');
 const search = document.querySelector('.search');
@@ -86,6 +97,7 @@ function nameBuild(json){
             fetch(`https://api.meteo-concept.com/api/forecast/nextHours?token=${token}&latlng=${lat}%2C${long}&insee=${insee}&hourly=true`)
             .then(res => res.json())
             .then(json => clickCity(json))
+            getPosition(item);
             searchBar.style.backgroundColor = '#A4C8FF';
             searchBar.style.color = '#FFFFFF';
             searchBar.style.backgroundImage = 'url(./assets/images/search.png)';
@@ -134,21 +146,9 @@ function textGeneration(textNbr){
         .then(json => textGenerationReal(json, whichText))
     }
 }
-
 function textGenerationReal(json, whichText){
     const heure = json.forecast[whichText].datetime.slice(11,16);
     degreeText.textContent= json.forecast[whichText].temp2m + "°C";
-}
-
-// Création objets de latitude et de longitude
-let lat;
-let long;
-let insee;
-
-function getPosition(item){
-    lat = item.latitude;
-    long = item.longitude;
-    insee = item.insee;
 }
 
 // Chart
