@@ -190,7 +190,7 @@ function chartBuild( h1, t1, h2, t2, h3, t3, h4, t4, h5, t5 ){
                     }
                 },
                 y: {
-                    max: 3.5,
+                    max: 1.5,
                     grid: {
                         display: false,
                     },
@@ -333,16 +333,16 @@ const logoMeteo = document.querySelector('.logo-meteo-1');
 
 function meteo(json){
     let pluie = json.forecast[0].probarain;
-    if(pluie < "30%"){
-        logoMeteo.style.backgroundImage= "none";
-        logoMeteo.style.backgroundImage = "url(./assets/images/sun.png)";
-    }
-    else if(pluie >= "70%"){
+    if(pluie >= "70%"){
         logoMeteo.style.backgroundImage= "none";
         logoMeteo.style.backgroundImage = "url(./assets/images/rainy.png)";
     }
-    else if(pluie >= "30%"){
+    else if(pluie >= "20%"){
         logoMeteo.style.backgroundImage= "none";
         logoMeteo.style.backgroundImage = "url(./assets/images/cloudy.png)";
+    }
+    else if(pluie < "20%"){
+        logoMeteo.style.backgroundImage= "none";
+        logoMeteo.style.backgroundImage = "url(./assets/images/sun.png)";
     }
 }
