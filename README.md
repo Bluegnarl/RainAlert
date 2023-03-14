@@ -4,4 +4,4 @@ RainAlert is a website using an API showing real-time weather in France. This We
 
 The API I used for this WebApp : <a href="https://api.meteo-concept.com/">Meteo-concept</a>
 
-We reproduced this Web App in React with my friend and it works pretty well : <a href="https://github.com/FullCycleConceptaria/rainalert-react">RainAlert-React</a>
+We reproduced this WebApp in React with my friend and it works pretty well : <a href="https://github.com/FullCycleConceptaria/rainalert-react">RainAlert-React</a>
